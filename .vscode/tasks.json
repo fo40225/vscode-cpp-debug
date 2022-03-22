@@ -39,7 +39,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: gcc.exe 建置使用中檔案",
+            "label": "C/C++: MinGW-w64 建置使用中檔案",
             "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",

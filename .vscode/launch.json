@@ -17,7 +17,7 @@
             "preLaunchTask": "C/C++: cl.exe 建置使用中檔案"
         },
         {
-            "name": "gcc.exe - 建置及偵錯使用中的檔案",
+            "name": "MinGW-w64 - 建置及偵錯使用中的檔案",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -40,7 +40,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc.exe 建置使用中檔案"
+            "preLaunchTask": "C/C++: MinGW-w64 建置使用中檔案"
         }
     ]
 }
