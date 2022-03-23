@@ -1,16 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#define __STDC_WANT_SECURE_LIB__ 1
 
-using namespace std;
+#include <iostream>
 
 int main()
 {
-    vector<string> msg {"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
-
-    for (const string& word : msg)
-    {
-        cout << word << " ";
-    }
-    cout << endl;
+    std::cout << "Hello, World!" << std::endl;
 }

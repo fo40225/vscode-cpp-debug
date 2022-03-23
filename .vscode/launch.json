@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cl.exe - 建置及偵錯使用中的檔案",
+            "name": "C: MSVC cl.exe - 建置及偵錯使用中的檔案",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -14,10 +14,22 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "console": "externalTerminal",
-            "preLaunchTask": "C/C++: cl.exe 建置使用中檔案"
+            "preLaunchTask": "C: MSVC cl.exe 建置使用中檔案"
         },
         {
-            "name": "MinGW-w64 - 建置及偵錯使用中的檔案",
+            "name": "C++: MSVC cl.exe - 建置及偵錯使用中的檔案",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "C++: MSVC cl.exe 建置使用中檔案"
+        },
+        {
+            "name": "C: MSYS2 MinGW-w64 gcc.exe - 建置及偵錯使用中的檔案",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
@@ -25,7 +37,7 @@
             "stopAtEntry": false,
             "cwd": "C:\\msys64\\mingw64\\bin",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
@@ -40,10 +52,36 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: MinGW-w64 建置使用中檔案"
+            "preLaunchTask": "C: MSYS2 MinGW-w64 gcc.exe 建置使用中檔案"
         },
         {
-            "name": "g++ - Build and debug active file",
+            "name": "C++: MSYS2 MinGW-w64 g++.exe - 建置及偵錯使用中的檔案",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "C:\\msys64\\mingw64\\bin",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "啟用 gdb 的美化顯示",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "將反組譯碼變體設為 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: MSYS2 MinGW-w64 g++.exe 建置使用中檔案"
+        },
+        {
+            "name": "C: linux gcc - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -65,7 +103,33 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++ build active file",
+            "preLaunchTask": "C: linux gcc build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "C++: linux g++ - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: linux g++ build active file",
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
